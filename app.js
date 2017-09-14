@@ -83,7 +83,7 @@ var $GI = (function () {
     function handleAbilityScores() {
         $.ajax({
             type: 'GET',
-            url: 'http://www.dnd5eapi.co/api/ability-scores',
+            url: 'https://www.dnd5eapi.co/api/ability-scores',
             jsonp: 'jsonp',
             success: abilityScoresCallback,
             error: commError
@@ -94,7 +94,7 @@ var $GI = (function () {
         console.log('help')
         $.ajax({
             type: 'GET',
-            url: 'http://www.dnd5eapi.co/api/races',
+            url: 'https://www.dnd5eapi.co/api/races',
             jsonp: 'jsonp',
             success: racesCallback,
             error: commError
@@ -104,7 +104,7 @@ var $GI = (function () {
     function handleSkills() {
         $.ajax({
             type: 'GET',
-            url: 'http://www.dnd5eapi.co/api/skills',
+            url: 'https://www.dnd5eapi.co/api/skills',
             jsonp: 'jsonp',
             success: skillsCallback,
             error: commError
