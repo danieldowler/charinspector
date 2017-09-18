@@ -35,8 +35,7 @@ var $GI = (function () {
     }
 
     function commError(response) {
-        console.error('Abandon Ship');
-        console.log(response);
+        console.error(response);
     }
 
     function generateAbilitiesList(item) {
@@ -84,7 +83,7 @@ var $GI = (function () {
     function handleAbilityScores() {
         $.ajax({
             type: 'GET',
-            url: 'https://www.dnd5eapi.co/api/ability-scores',
+            url: 'http://www.dnd5eapi.co/api/ability-scores',
             jsonp: 'jsonp',
             success: abilityScoresCallback,
             error: commError
@@ -97,10 +96,9 @@ var $GI = (function () {
     }
 
     function handleRaces() {
-        console.log('help')
         $.ajax({
             type: 'GET',
-            url: 'https://www.dnd5eapi.co/api/races',
+            url: 'http://www.dnd5eapi.co/api/races',
             jsonp: 'jsonp',
             success: racesCallback,
             error: commError
@@ -110,7 +108,7 @@ var $GI = (function () {
     function handleSkills() {
         $.ajax({
             type: 'GET',
-            url: 'https://www.dnd5eapi.co/api/skills',
+            url: 'http://www.dnd5eapi.co/api/skills',
             jsonp: 'jsonp',
             success: skillsCallback,
             error: commError
@@ -138,7 +136,6 @@ var $GI = (function () {
     }
 
     function racesCallback(data) {
-    console.log('boy');
     $('#list').empty();
     $('#list').append(
         data.results.map(generateRacesList)
