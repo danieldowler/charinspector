@@ -37,6 +37,7 @@ button {
     border-color: #4C2F1D;
     color: #4C2F1D;
     font-weight: 900;
+    width: 96px;
 }
 
     button:hover {
