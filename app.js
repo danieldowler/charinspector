@@ -138,7 +138,7 @@ var $GI = (function () {
     function racesCallback(data) {
     $('#list').empty();
     $('#list').append(
-        data.map(generateRacesList)
+        data.results.map(generateRacesList)
     );
     }
 
@@ -150,7 +150,7 @@ var $GI = (function () {
     function skillsCallback(data) {
         $('#list').empty();
         $('#list').append(
-            data.map(generateList)
+            data.results.map(generateList)
         );
     }
 
