@@ -40,7 +40,7 @@ var $GI = (function () {
 
     function generateAbilitiesList(item) {
         console.log(item)
-        return '<li><a href="#" onclick="$GI.getAbilityDetail(\'' + item.url + '\')">' + item.name + '</a></li>';
+        return '<li><a href="#" onclick="$GI.getAbilitiesDetail(\'' + item.url + '\')">' + item.name + '</a></li>';
     }
 
     function generateList(item) {
