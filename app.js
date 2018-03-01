@@ -39,10 +39,7 @@ var $GI = (function () {
     }
 
     function generateAbilitiesList(item) {
-        $('#list').empty();
-        $('#list').append(
-            data.results.map(generateAbilitiesList)
-        );
+        return '<li><a href="#" onclick="$GI.getAbilityDetail(\'' + item.url + '\')">' + item.name + '</a></li>';
     }
 
     function generateList(item) {
