@@ -39,7 +39,10 @@ var $GI = (function () {
     }
 
     function generateAbilitiesList(item) {
-        $
+        $('#list').empty();
+        $('#list').append(
+            data.results.map(generateAbilitiesList)
+        );
     }
 
     function generateList(item) {
