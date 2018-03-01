@@ -1,0 +1,9 @@
+language: node_js
+node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: X04nPa93TgPCvp5psI4lA/1szdJBECNrR7K5NuhmqBziNKn/tm/lyj4IzwTiQWTKRVtVdm5VkHDRt0G0HEgqV+fv+/gXpJvaUX2BivhdZ1ndS/RUaL5HdX/dkkqdfF0lKutqYvLJHbG+ylLiDXe+PYvo/iyvcLeV5pbf8KAuiHfRCbcZxAHvQafauULfBSB0wuw+dw1Nn7wx7++4fuj+DiyLxxD3JFidFDWZPnzow4JrNSftLb4hMzBFLjqHUe2gd8oiK93zpKbC7rS6qN2HImrsQngsiXA6eQSLBYIVyhOYNhB4b3Lhhto8EBgDdujC+5ORxtu2TT7C6jRjnW1F24YrGX1jHs4UzZyYH2HyBE1TN+hntBMOcM8zPrGv0jw+1HKDr870KDfG7JUBWcwyD9FzelM89gFEwDVQHL7uI0NbAhfsGa9U1LjWjOGy18xUmFiId7965Sp42QdHl7FRxwbp9t6XGM27hShckwhffRWZzBjkVnVfv/SYCCkiSttwLyBZ6XdSH6EFHWe5THdJR+5Z5w2DwHOt8dMp0K/ciWLnkLc5tZitTCvbjX0XVURej7vtAopmjnzNF/oOBJW+cS/RrQ+++o4KXkfUMaU+2C60ILxaQcu1Suz4Z3b7x5bQTXnPKocELYQsjF2hcPdYg99wrwxxsCriFdAMzV/RMVo=
+  app: charinspector
+  on:
+    repo: danieldowler/charinspector
