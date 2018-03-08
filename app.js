@@ -4,11 +4,11 @@ var $GI = (function () {
     init();
 
     return {
-        generateAbilitiesList : generateAbilitiesList,
-        generateList : generateList,
-        generateRacesList : generateRacesList,
-        getAbilitiesDetail : getAbilitiesDetail,
-        getRaceDetail : getRaceDetail,
+        generateAbilitiesList: generateAbilitiesList,
+        generateList: generateList,
+        generateRacesList: generateRacesList,
+        getAbilitiesDetail: getAbilitiesDetail,
+        getRaceDetail: getRaceDetail,
         getSkillDetail: getSkillDetail,
         handleAbilityScores: handleAbilityScores,
         handleHome: handleHome,
@@ -22,19 +22,13 @@ var $GI = (function () {
         var description = data.desc.map((desc) => '<p>' + desc + '</p>')
 
         $('#details').append(`
-        <h2>${data.full_name}</h2>
-        <p>${(data.desc)}</p>
+        <h2 class="title">${data.full_name}</h2>
+        <p class="description">${(data.desc)}</p>
     `);
     }
 
-    function abilityScoresCallback(data) {
-        $('#list').empty();
-        $('#list').append(
-            data.map(generateAbilitiesList)
-        );
-    }
-
     function commError(response) {
+        $(".overlay").css("display", "none")
         console.error(response);
     }
 
@@ -48,7 +42,7 @@ var $GI = (function () {
     }
 
     function generateRacesList(item) {
-    return '<li><a href="#" onclick="$GI.getRaceDetail(\'' + item.url + '\')">' + item.name + '</a></li>';
+        return '<li><a href="#" onclick="$GI.getRaceDetail(\'' + item.url + '\')">' + item.name + '</a></li>';
     }
 
     function getAbilitiesDetail(url) {
@@ -82,6 +76,7 @@ var $GI = (function () {
     }
 
     function handleAbilityScores() {
+        $(".overlay").css("display", "flex")
         $.ajax({
             type: 'GET',
             url: 'https://dndpassthrough.herokuapp.com/dnd/abilities',
@@ -92,11 +87,13 @@ var $GI = (function () {
     }
 
     function handleHome() {
+        $(".overlay").css("display", "flex")
         $('#list').empty();
         init();
     }
 
     function handleRaces() {
+        $(".overlay").css("display", "flex")
         $.ajax({
             type: 'GET',
             url: 'https://dndpassthrough.herokuapp.com/dnd/races',
@@ -107,6 +104,7 @@ var $GI = (function () {
     }
 
     function handleSkills() {
+        $(".overlay").css("display", "flex")
         $.ajax({
             type: 'GET',
             url: 'https://dndpassthrough.herokuapp.com/dnd/skills',
@@ -117,14 +115,22 @@ var $GI = (function () {
     }
 
     function init() {
-        $('#details').empty().append(`<h1>What to Know Before you Roll</h1> <p>Welcome to my need to know before your roll assistant. This site is designed to answer all your questions about various races, ability scores, and skills you may want to know before you nail down the specifics for that newest Dungeons and Dragons character.</p>`);
+        $('#details').empty().append(`<p>Welcome to my need to know before your roll assistant. This site is designed to answer all your questions about various races, ability scores, and skills you may want to know before you nail down the specifics for that newest Dungeons and Dragons character.</p>`);
+    }
+
+    function abilityScoresCallback(data) {
+        $(".overlay").css("display", "none")
+        $('#list').empty();
+        $('#list').append(
+            data.map(generateAbilitiesList)
+        );
     }
 
     function raceDetailCallback(data) {
         $('#details').empty();
 
         var starting_proficiencies = data.starting_proficiencies.map(pro => '<li>' + pro.name + '</li>').join('');
-        /*must remove proficiency text when there are no proficiencies*/
+        var proficiency_class = starting_proficiencies ? "" : "hidden"
 
         $('#details').append(`
         <h2>${data.name}</h2>
@@ -132,16 +138,16 @@ var $GI = (function () {
         <p>${replaceYou(data.age, data.name)}</p>
         
         <p>${replaceYou(data.language_desc, data.name)}</p> 
-        <h5>Proficiencies</h5> 
-        <ul>${starting_proficiencies}</ul>
-    `);
+        <h5 class="${proficiency_class}">Proficiencies</h5> 
+        <ul>${starting_proficiencies}</ul>`);
     }
 
     function racesCallback(data) {
-    $('#list').empty();
-    $('#list').append(
-        data.map(generateRacesList)
-    );
+        $(".overlay").css("display", "none")
+        $('#list').empty();
+        $('#list').append(
+            data.map(generateRacesList)
+        );
     }
 
     function replaceYou(text, name) {
@@ -150,6 +156,7 @@ var $GI = (function () {
     }
 
     function skillsCallback(data) {
+        $(".overlay").css("display", "none")
         $('#list').empty();
         $('#list').append(
             data.map(generateList)
