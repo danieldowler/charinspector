@@ -48,15 +48,17 @@ a:link {
 }
 
 a:visited {
-    color: #fcfcfc;
+    color: #0482f8;
 }
 
 a:hover {
-    color: #fcfcfc;
+    color: #0a024d;
+    font-style: italic;
+    font-size: 18px;
 }
 
 a:active {
-    color: #fcfcfc;
+    color: #0a024d;
 }
 
 /*@media only screen 
