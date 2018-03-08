@@ -58,7 +58,7 @@ a:active {
     color: #fcfcfc;
 }
 
-@media only screen 
+/*@media only screen 
 and (max-width:740px){
     .col-md-3 > button, #list > li {
         display: inline-block;
@@ -70,4 +70,4 @@ and (max-width:740px){
     #details{
         margin: 50px 0;
     }
-}
+}*/
