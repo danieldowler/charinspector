@@ -124,6 +124,7 @@ var $GI = (function () {
         $('#details').empty();
 
         var starting_proficiencies = data.starting_proficiencies.map(pro => '<li>' + pro.name + '</li>').join('');
+        /*must remove proficiency text when there are no proficiencies*/
 
         $('#details').append(`
         <h2>${data.name}</h2>
