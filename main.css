@@ -50,7 +50,7 @@ button {
     }
 
 a:link {
-    color: #0a024d;
+    color: #03f803;
     text-decoration: underline;
 }
 
@@ -59,13 +59,13 @@ a:visited {
 }
 
 a:hover {
-    color: #0a024d;
+    color: #03f803;
     font-style: italic;
     font-size: 18px;
 }
 
 a:active {
-    color: #0a024d;
+    color: #03f803;
 }
 
 /*@media only screen 
